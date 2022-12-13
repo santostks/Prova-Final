@@ -1,15 +1,15 @@
 <div class="container">
-  <button (click)="getTodo()">MostrarTODOS</button>
+  <button (click)="getTodos()">MostrarTODOS</button>
 
-  <table *ngIf="this.todo">
+  <table>
       <tr>
         <th>ID</th>
-        <th>NAME</th>
-        <th>USERNAME</th>
-        <th>EMAIL</th>
+        <th>USERID</th>
+        <th>TITLE</th>
+        <th>COMPLETED</th>
       </tr>
-      <tr >
-        <td>{{(this.todo.userId)}}</td>
+      <tr *ngIf="this.todo">
+        <td >{{(this.todo.userId)}}</td>
         <td>{{(this.todo.id)}}</td>
         <td>{{(this.todo.title)}}</td>
         <td>{{(this.todo.completed)}}</td>

@@ -2,16 +2,15 @@ import { TODOS } from './todo';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
 
-  private json = 'https://jsonplaceholder.typicode.com/todos'
+  private todos = 'https://jsonplaceholder.typicode.com/todos'
 
-  getTodo(){
-    return this.http.get<TODOS>(this.json)
+  getTodos(){
+    return this.http.get<TODOS>(this.todos)
   }
 
   constructor(private http: HttpClient) { }
