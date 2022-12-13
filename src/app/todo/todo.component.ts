@@ -1,8 +1,6 @@
 import { TodosService } from './../todos.service';
 import { Component, OnInit } from '@angular/core';
 import { TODOS } from '../todo';
-import { getTextOfJSDocComment } from 'typescript';
-
 
 @Component({
   selector: 'app-todo',
@@ -16,8 +14,9 @@ export class TodoComponent implements OnInit {
   constructor(private todosService: TodosService ) { }
 
   ngOnInit(): void {
-
-    
   }
 
+  getTodo(){
+    this.todosService.getTodo().subscribe(todo => this.todo = todo)
+  }
 }

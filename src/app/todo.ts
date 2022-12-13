@@ -1,6 +1,6 @@
 export interface TODOS{
-  userId: number;
-  id: number;
-  title: string;
-  completed: string;
+  "userId": number;
+  "id": number;
+  "title": string;
+  "completed": string;
   }
