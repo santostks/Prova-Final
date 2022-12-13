@@ -1,30 +1,21 @@
-import { TodosService } from './../todos.service';
+import { TodoService } from './../todos.service';
 import { Component, OnInit } from '@angular/core';
 import { Todo } from '../todo';
-import { HttpClient } from "@angular/common/http";
+
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
-export class TodoComponent implements OnInit {
+export class TodosComponent implements OnInit {
+  todos?: Todo[];
 
-  todo?: Todo;
-
-
-
-
-  constructor(private todosService: TodosService ) { }
+  constructor(private todoService: TodoService) {}
 
   ngOnInit(): void {
-    this.getTodos()
+    this.todoService.getTodos().subscribe((todos) => {
+      this.todos = todos;
+    });
   }
-
-  getTodos(){
-    const todos ='https://jsonplaceholder.typicode.com/todos'
-    this.todosService.getTodos().subscribe(todo => this.todo = todo)
-      console.log(this.todo)
-    }
-  }
-
+}
