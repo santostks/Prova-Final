@@ -1,21 +1,21 @@
-<div  *ngFor="let todo of todo">
+<div class="container">
+  <button (click)="getTodo()">MostrarTODOS</button>
 
-  <table class="table">
-    <thead>
+  <table *ngIf="this.todo">
       <tr>
-        <th>UserId</th>
         <th>ID</th>
-        <th>TITLE</th>
-        <th>COMPLETED</th>
+        <th>NAME</th>
+        <th>USERNAME</th>
+        <th>EMAIL</th>
       </tr>
-    </thead>
-    <tbody>
-        <td>{{ this.todo.userID}}</td>
-        <td>{{o.ticketField}}</td>
-        <td>{{o.operator}}</td>
-        <td>{{o.expectedValue}}</td>
+      <tr >
+        <td>{{(this.todo.userId)}}</td>
+        <td>{{(this.todo.id)}}</td>
+        <td>{{(this.todo.title)}}</td>
+        <td>{{(this.todo.completed)}}</td>
+        <p>{{(this.todo.id)}}</p>
       </tr>
-    </tbody>
+    </table>
 
-  </table>
-</div>
+  </div>
+
