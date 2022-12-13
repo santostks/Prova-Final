@@ -1,21 +1,21 @@
-<div class="container">
+<div  *ngFor="let todo of todo">
 
-  <ul class="TODO">
-    <li *ngFor="let todo of todo">
-    <table>
+  <table class="table">
+    <thead>
       <tr>
-        <th>USER ID</th>
+        <th>UserId</th>
         <th>ID</th>
         <th>TITLE</th>
         <th>COMPLETED</th>
       </tr>
-      <tr>
-        <td>{{(this.todo?.)}}</td>
-        <td>{{(this.todo?.userId)}}</td>
-        <td>{{(this.todo?.title)}}</td>
-        <td>{{(this.todo?.completed)}}</td>
+    </thead>
+    <tbody>
+        <td>{{ this.todo.userID}}</td>
+        <td>{{o.ticketField}}</td>
+        <td>{{o.operator}}</td>
+        <td>{{o.expectedValue}}</td>
       </tr>
-    </table>
-    </ul>
-    </li>
+    </tbody>
+
+  </table>
 </div>
