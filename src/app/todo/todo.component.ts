@@ -1,6 +1,7 @@
 import { TodosService } from './../todos.service';
 import { Component, OnInit } from '@angular/core';
-import { TODOS } from '../todo';
+import { Todo } from '../todo';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-todo',
@@ -9,14 +10,21 @@ import { TODOS } from '../todo';
 })
 export class TodoComponent implements OnInit {
 
-  todo?: TODOS;
+  todo?: Todo;
+
+
+
 
   constructor(private todosService: TodosService ) { }
 
   ngOnInit(): void {
+    this.getTodos()
   }
 
   getTodos(){
-    this.todosService.getTodos().subscribe(todos => this.todo = todos)
+    const todos ='https://jsonplaceholder.typicode.com/todos'
+    this.todosService.getTodos().subscribe(todo => this.todo = todo)
+      console.log(this.todo)
+    }
   }
-}
+

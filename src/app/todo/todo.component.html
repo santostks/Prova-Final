@@ -1,21 +1,7 @@
 <div class="container">
   <button (click)="getTodos()">MostrarTODOS</button>
-
-  <table>
-      <tr>
-        <th>ID</th>
-        <th>USERID</th>
-        <th>TITLE</th>
-        <th>COMPLETED</th>
-      </tr>
-      <tr *ngIf="this.todo">
-        <td >{{(this.todo.userId)}}</td>
-        <td>{{(this.todo.id)}}</td>
-        <td>{{(this.todo.title)}}</td>
-        <td>{{(this.todo.completed)}}</td>
-        <p>{{(this.todo.id)}}</p>
-      </tr>
-    </table>
+  <div class="dogDiv" *ngIf="this.todo">
+    <span>{{(this.todo.userId)}}</span>
 
   </div>
 
